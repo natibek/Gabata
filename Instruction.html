@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="InstructionStyle.css" />
+		<link rel="icon" href="Gabata Images/Large Marble.png" />
+		<script src="script.js"></script>
+
+		<title>How To Play Gabata</title>
+	</head>
+	<body>
+		<nav class="menu">
+			<!-- <a class="m_item" href="/Gabata_webpage.html"><div>Home</div></a> -->
+			<a class="m_item" href="/Gabata/Gabata_webpage.html"><div>Home</div></a>
+
+			<a class="m_item" href="#board"><div>Learn To Play</div></a>
+			<a
+				class="m_item"
+				href="https://drive.google.com/uc?id=1OXmkEk411JxnN-g23XBCkDHgGC3QtNO_&export=download"
+				target="_blank"
+			>
+				<div>Download</div></a
+			>
+			<a
+				class="m_item"
+				href="https://www.linkedin.com/in/nathnael-bekele-2b240b257"
+				target="_blank"
+				><div>About Creator</div></a
+			>
+			<a class="m_item" href="https://github.com/natibek" target="_blank"
+				><div>Other Works by Creator</div></a
+			>
+		</nav>
+
+		<div class="container">
+			<div class="sidebar">
+				<ol class="options">
+					<li><a href="#board">Board</a></li>
+					<li><a href="#rules">Game Rules</a></li>
+					<li><a href="#bot">Bot</a></li>
+					<li><a href="#features">Application Features</a></li>
+				</ol>
+			</div>
+
+			<div class="main">
+				<div id="board" class="board">
+					<h2 class="sec_title">Board</h2>
+					<br />
+					<div class="board_elements">
+						<div class="image_plus_text_container">
+							<div class="image">
+								<img src="Gabata Images/Deposit.png" />
+							</div>
+							<div class="image_text"><p>Deposit slot</p></div>
+						</div>
+
+						<div class="image_plus_text_container">
+							<div class="image">
+								<img src="Gabata Images/Pit.png" />
+							</div>
+							<div class="image_text"><p>Player Pit</p></div>
+						</div>
+						<div class="image_plus_text_container">
+							<div class="image">
+								<img src="Gabata Images/Pit_turn.png" />
+							</div>
+							<div class="image_text">Valid / Playable Pit</div>
+						</div>
+
+						<div class="image_plus_text_container">
+							<div class="image">
+								<img src="Gabata Images/Pit_not_turn.png" />
+							</div>
+							<div class="image_text">Invalid / Unplayable Pit</div>
+						</div>
+
+						<div class="image_plus_text_container2">
+							<div class="image" id="full_board">
+								<img src="Gabata Images/Final_Full_Board.png" width="100%" />
+							</div>
+							<div class="image_text"><p>Complete Board</p></div>
+						</div>
+					</div>
+				</div>
+
+				<div id="rules" class="rules">
+					<h2 class="sec_title">Game Rules</h2>
+					<br />
+
+					<p>
+						To start, each player has 6 pits with 4 marbles each and an empty
+						deposit slot. The deposit slot for Player 1 is on the right side of
+						the board and on the left for Player 2. To make a move, players
+						gather all the marbles from one of their valid/playable pits and
+						distribute them counterclockwise, one by one, into successive slots,
+						<em>always skipping the opponent's deposit slot</em>.
+					</p>
+
+					<p>
+						A pit is valid/playable if it is on the player's side and not empty.
+						They can be distinguished by their color when hovered over.
+					</p>
+
+					<br />
+
+					<p>The player's turn is over if:</p>
+					<ol>
+						<li>They land in an empty pit on the opponent's side.</li>
+						<li>
+							They land in an empty pit on their side and the symmetrically
+							opposite opponent pit is empty.
+						</li>
+					</ol>
+
+					<p>It is still the player's turn if:</p>
+					<ol>
+						<li>They land in their own deposit slot.</li>
+						<li>
+							They land in an empty pit on their side and the symmetrically
+							opposite opponent pit is not empty. In this case, take the marble
+							from your pit into the symmetrically oppoosite pit, collect all of
+							them, and continue counterclockwise like regular.
+						</li>
+					</ol>
+					<p>The color of the player labels show whose turn it is.</p>
+					<br />
+
+					<p>
+						The player with the most marbles in their deposit slot once no
+						marbles are in the pits wins. Ties are possible when each player has
+						24 marbles in their deposit slots.
+					</p>
+				</div>
+
+				<div id="bot" class="bot">
+					<h2 class="sec_title">Bot</h2>
+					<br />
+
+					<p>
+						The Gabata Bot looks at all the possible next
+						<em>n levels</em> moves and chooses the one which resulted in the
+						most amount of marbles in the deposit slot. An alternative strategy
+						that could be imployed in future versions is choosing the moves that
+						also lead to less changes in turns to the opponent.
+					</p>
+
+					<p>
+						You can choose the strength of the bot by setting the bot level to
+						-1 or a value from 1 to 8. Levels 1 to 8 are the smart bots that
+						make the best move at the chosen depth. Bot level -1 looks at all
+						the possible next 5 moves and chooses the one resulting in the least
+						amount of marbles in the bot's deposit slot. It is difficult to lose
+						to this bot.
+					</p>
+
+					<div class="demo">
+						<img class="demo-img" src="Web Files/Bot Level.png" />
+					</div>
+
+					<p>
+						You can choose whether you are Player 1 or 2 when playing against
+						the bot. You can change this mid game as well.
+					</p>
+
+					<div class="demo">
+						<img class="side" src="Web Files/Choose Side.png" />
+					</div>
+					<p>
+						You can reset the bot level at any point in the game. Also, you can
+						switch sides with the bot at any point in the game (saves you from
+						looking terrible).
+					</p>
+					<div class="demo">
+						<video
+							class="big"
+							src="Web Files/Switch sides and Change level.mp4"
+							id="demo1"
+							autoplay
+							muted
+							loop
+							width="70%"
+						></video>
+					</div>
+					<p>
+						You can also choose whether the bot makes the moves by itself
+						whenever it's its turn by choosing the <em>Bot Automove</em> option
+						under the Bot Settings. This is the default setting. Alternatively,
+						you can have the bot highlight the move it wants to make and wait
+						for you to make the move (convenient for cheating in the real world)
+						by choosing the <em>Player Makes Bot Move</em> option.
+					</p>
+
+					<div class="demo">
+						<img
+							class="demo-img"
+							src="Web Files/Bot Movement.png"
+							width="20%"
+						/>
+					</div>
+				</div>
+
+				<div id="features" class="features">
+					<h2 class="sec_title">Application Features</h2>
+					<br />
+					<p>
+						Whenever you hover over a pit (unless it is on the bot's side), it
+						switches colors to show whether you can start a move the pit or not.
+						It turns lighter when valid and purple when invalid.
+					</p>
+					<p>
+						Hovering over a valid pit or any of the deposit slots shows the
+						number of marbles in the pit or deposit slot in the bottom display.
+					</p>
+
+					<div class="demo">
+						<video
+							class="big"
+							src="Web Files/Hovering.mp4"
+							id="demo2"
+							width="80%"
+							autoplay
+							muted
+							loop
+						></video>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer style="font-size: 20px">
+			<p>
+				Contact me through
+				<a
+					href="https://www.linkedin.com/in/nathnael-bekele-2b240b257"
+					target="_blank"
+					class="contact"
+				>
+					LinkedIn</a
+				>
+				for more information.
+			</p>
+			<p>Nati &copy; 2023</p>
+		</footer>
+	</body>
+</html>
