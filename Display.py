@@ -127,7 +127,7 @@ def home():
 
 
 def instructions():
-    webbrowser.open("https://natibek.github.io/Gabata/Gabata_webpage.html")
+    webbrowser.open("https://natibek.github.io/Gabata-App/Gabata_webpage.html")
     """
     web_alert = Toplevel(ROOT)
     web_alert.title("Page not found")
