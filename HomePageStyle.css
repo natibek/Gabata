@@ -247,6 +247,16 @@ p {
 	z-index: -1;
 }
 
+.download_text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+}
+.download_text p {
+	text-align: center;
+}
+
 .deposit {
 	top: 20%;
 	left: 10%;
