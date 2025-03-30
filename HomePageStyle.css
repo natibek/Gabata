@@ -8,10 +8,11 @@ body {
 	margin: 0px;
 }
 
-a {
+a:not(.anchor-project) {
 	text-decoration: none;
 	color: black;
 }
+
 
 p {
 	font-size: larger;
